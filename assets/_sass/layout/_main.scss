@@ -1,0 +1,205 @@
+@use "../foundation/import"as f;
+
+.l-main {
+  margin: 0 auto;
+  text-align: center;
+  background-color: #F2EEE7;
+
+  //------------------------------------------------------------
+  //やなぎ亭のこだわり
+  //------------------------------------------------------------
+  .p-main {
+    &__detailed {
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 8%;
+      // background-color: #CE8726;
+      // background-color: #F5EBD8;
+      background-image: url(../img/paper.jpeg);
+      background-repeat: repeat;
+      background-position: center center;
+
+      .bg01 {
+        position: absolute;
+        width: 30%;
+        left: 0;
+      }
+
+      .bg02 {
+        position: absolute;
+        width: 7%;
+        bottom: 1%;
+        right: 15%;
+      }
+
+      .bg03 {
+        position: absolute;
+        width: 15%;
+        bottom: 1%;
+        right: 1%;
+        z-index: 1;
+      }
+
+      .bgcloud01 {
+        position: absolute;
+        width: 30%;
+        right: -3%;
+        top: 1%;
+      }
+
+      .bgcloud02 {
+        position: absolute;
+        width: 30%;
+        top: 40%;
+        left: -2%;
+      }
+
+      .bgcloud03 {
+        position: absolute;
+        width: 30%;
+        right: -3%;
+        bottom: 20%;
+      }
+    }
+
+    //------------------------------------------------------------
+    //お品書き
+    //------------------------------------------------------------
+    &__menu {
+      position: relative;
+      background-image: url(../img/paper05.jpg);
+      background-attachment: fixed;
+      background-repeat: repeat;
+      background-size: cover;
+      background-position: center center;
+      padding-bottom: 7%;
+      overflow: hidden;
+
+      .bg04 {
+        position: absolute;
+        width: 30%;
+        bottom: 3%;
+        right: 1%;
+      }
+
+      .bg05 {
+        position: absolute;
+        width: 20%;
+        bottom: 2%;
+        left: 5%;
+      }
+    }
+
+    //------------------------------------------------------------
+    //トッピング  
+    //------------------------------------------------------------
+    &__topping {
+      // bgどっちか選ぶ
+      background-color: #F6EEDD;
+      background-image: url(../../assets/img/bg-dots.png);
+      padding-bottom: 7%;
+      overflow: hidden;
+
+      &-read {
+        position: relative;
+        display: inline-block;
+        // 
+        font-size: clamp(1.125rem, 0.896rem + 0.98vw, 1.75rem);
+        opacity: .7;
+
+        p {
+          display: inline-block;
+        }
+
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          width: 2px;
+          height: 80px;
+          background-color: #000000;
+          opacity: 0.8;
+
+        }
+
+        &::before {
+          left: -40px;
+          transform: rotate(-35deg);
+        }
+
+        &::after {
+          right: -40px;
+          transform: rotate(35deg);
+        }
+
+      }
+
+      &-money {
+        display: inline-block;
+        font-size: clamp(1.125rem, 0.896rem + 0.98vw, 1.75rem);
+        opacity: .7;
+        padding-top: 5%;
+      }
+    }
+
+    //------------------------------------------------------------
+    //ニュース 
+    //------------------------------------------------------------
+    &__news {
+      position: relative;
+      background-image: url(../img/paper05.jpg);
+      background-attachment: fixed;
+      background-repeat: repeat;
+      background-size: cover;
+      background-position: center center;
+      padding-bottom: 7%;
+      overflow: hidden;
+    }
+  }
+
+  //p-main
+}
+
+//l-main
+
+//------------------------------------------------------------
+//Swiper  
+//------------------------------------------------------------
+#slide {
+  margin: 0 auto;
+}
+
+.swiper-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.swiper-slide-next,
+.swiper-slide-prev {
+  opacity: .6;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: f.$red;
+}
+
+//------------------------------------------------------------
+//@media screen  
+//------------------------------------------------------------
+@include f.mq(sp) {
+
+
+
+  .p-main__topping {
+    &-read {
+
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+

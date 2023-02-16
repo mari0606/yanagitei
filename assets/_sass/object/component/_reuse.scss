@@ -1,0 +1,338 @@
+@use "../../foundation/import"as f;
+
+//------------------------------------------------------------
+//余白（component）  
+//------------------------------------------------------------
+.c-content {
+  margin-left: 15vw;
+}
+
+.c-container {
+  padding-top: 5%;
+}
+
+//------------------------------------------------------------
+//やなぎ亭のこだわり   
+//------------------------------------------------------------
+.c-section__ttl {
+  position: relative;
+  display: inline-block;
+  font-size: f.rem(40);
+  padding: 8% 0 2%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    height: 7px;
+    background: repeating-linear-gradient(-45deg, #bc8f8f, #bc8f8f 2px, white 2px, white 4px);
+  }
+}
+
+.c-group {
+  padding-bottom: 5%;
+
+  &__ttl {
+    display: flex;
+    align-items: center;
+    padding-bottom: 2%;
+    margin-left: 5%;
+
+    h3 {
+      font-size: f.rem(26);
+      padding-left: 1rem;
+    }
+
+    &-img {
+      width: 60px;
+    }
+  }
+
+  &__flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+    &-img01 {
+      position: relative;
+      width: 35%;
+
+      &::after {
+        content: "";
+        position: absolute;
+        background-image: url(../img/after01.png);
+        background-size: cover;
+        width: 40.5%;
+        height: 56%;
+        top: -50px;
+        left: -80px;
+      }
+    }
+
+    &-img02 {
+      position: relative;
+      width: 35%;
+
+      &::after {
+        content: "";
+        position: absolute;
+        background-image: url(../img/after02.png);
+        background-size: cover;
+        width: 40.5%;
+        height: 56%;
+        top: -50px;
+        left: -80px;
+      }
+    }
+
+    &-img03 {
+      position: relative;
+      width: 35%;
+
+      &::after {
+        content: "";
+        position: absolute;
+        background-image: url(../img/after03.png);
+        background-size: cover;
+        width: 40.5%;
+        height: 56%;
+        top: -50px;
+        left: -80px;
+      }
+    }
+
+    &-txt {
+      width: 45%;
+      font-size: f.rem(22);
+      padding-left: 5%;
+      text-align: left;
+      z-index: 1;
+
+      &:nth-of-type(1) {
+        padding-left: 0;
+      }
+
+      p {
+        padding-bottom: 1rem;
+
+      }
+    }
+  }
+}
+
+//------------------------------------------------------------
+//menu  
+//------------------------------------------------------------
+
+.c-menu {
+  &__flex {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin: 0 auto;
+    padding-bottom: 5%;
+  }
+
+  &__box {
+    width: 22vw;
+    position: relative;
+
+    &-img {
+      overflow: hidden;
+
+      img {
+        height: auto;
+        transition: transform 1.2s ease;
+        border-radius: 5px;
+      }
+
+      &:hover img {
+        transform: scale(1.1);
+      }
+    }
+
+
+    p {
+      position: absolute;
+      bottom: -20px;
+      right: -60px;
+      color: #000000;
+      // font-size: 2rem;
+      font-size: clamp(1rem, 0.726rem + 1.17vw, 1.75rem);
+      background-color: f.$orange;
+      border-radius: 10px;
+      text-align: left;
+      padding: 10px;
+    }
+  }
+}
+
+//------------------------------------------------------------
+//news
+//------------------------------------------------------------
+
+.c-news {
+  &__index {
+    border-top: f.$red solid 1px;
+    width: 50vw;
+    margin: 0 auto;
+
+    &-box {
+      border-bottom: f.$red solid 1px;
+      text-align: left;
+
+      a {
+        display: block;
+        padding: 20px 0;
+      }
+    }
+
+    &-date {
+      display: block;
+      color: f.$black;
+      font-family: serif;
+      font-weight: 700;
+    }
+
+    &-ttl {
+      font-family: serif;
+      color: f.$red;
+      padding-top: 1rem;
+    }
+  }
+}
+
+//------------------------------------------------------------
+//ページトップ
+//------------------------------------------------------------
+#c-pagetop {
+  position: fixed;
+  width: 100px;
+  height: 50px;
+  bottom: 0;
+  right: 0;
+  background-color: f.$red;
+  margin-left: auto;
+  z-index: 555;
+
+  &:hover {
+    opacity: .8;
+    transition: all .3s ease;
+  }
+
+  a {
+    display: block;
+    height: 100%;
+    color: f.$white;
+    font-size: f.rem(22);
+    text-align: center;
+    padding-top: 1rem;
+  }
+}
+
+//------------------------------------------------------------
+//@media screen
+//------------------------------------------------------------
+@include f.mq(pc) {
+.c-group__flex-txt {
+  font-size: f.rem(18);
+}
+
+.c-group__flex-img01::after,
+  .c-group__flex-img02::after,
+  .c-group__flex-img03::after {
+    width: 40.5%;
+    height: 56%;
+    top: -40px;
+    left: -40px;
+  }
+}
+
+
+
+@include f.mq(sp) {
+
+  .c-content {
+    margin-left: 0px;
+  }
+
+  .c-container {
+    padding-top: 15%;
+  }
+
+  .c-section__ttl {
+    font-size: f.rem(20);
+    padding: 15% 0 2%;
+  }
+
+  .c-section__ttl::after {
+    bottom: 0px;
+    height: 2px;
+  }
+
+  .c-group {
+    padding-bottom: 20%;
+  }
+
+  .c-group__flex {
+    display: flex;
+    flex-direction: column;
+
+    &-txt {
+      width: 80%;
+      font-size: f.rem(16);
+      padding-left: 0;
+      margin: 0 auto;
+      padding-top: 8%;
+
+      p {
+        display: inline;
+        padding-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .c-group__flex-img01,
+  .c-group__flex-img02,
+  .c-group__flex-img03 {
+    width: 50%;
+  }
+
+  .c-group__left {
+    flex-direction: column-reverse;
+  }
+
+  .c-group__flex-img01::after,
+  .c-group__flex-img02::after,
+  .c-group__flex-img03::after {
+    width: 100px;
+    height: 100px;
+    left: -50px;
+  }
+
+  .c-menu__flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .c-menu__box {
+    width: 55vw;
+    p {
+      position: unset;
+      text-align: center;
+    br {
+      display: none;
+    }
+    }
+  }
+
+  .c-news__index {
+    width: 80vw;
+  }
+}
+
+

@@ -1,0 +1,60 @@
+@use "../foundation/import"as f;
+
+//------------------------------------------------------------
+//footer 
+//------------------------------------------------------------
+.l-footer {
+  background-color: f.$black;
+
+    &__flex {
+      display: flex;
+      align-items: center;
+      padding-bottom: 7%;
+      justify-content: center;
+      gap: 0 5rem;
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem 0;
+
+
+      & a:hover {
+        opacity: .5;
+        transition: all .3s ease;
+      }
+
+      li ,a {
+        font-family: serif;
+        color: f.$white;
+      }
+    }
+    &__shopname {
+      a {
+        color: f.$white;
+        font-size: f.rem(32);
+        font-family: 'myfont';
+        white-space: nowrap;
+      }
+    }
+  
+  .p-copyright {
+    color: f.$white;
+    font-size: f.rem(14);
+    font-family: serif;
+    padding: 1rem 0;
+    text-align: center;
+  }
+}
+//------------------------------------------------------------
+//@media screen
+//------------------------------------------------------------
+@include f.mq(sp) {
+  .l-footer__shopname {
+    display: none;
+  }
+  .l-footer__flex {
+    justify-content: space-around;
+    gap: unset;
+}
+}

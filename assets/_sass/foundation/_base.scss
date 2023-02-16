@@ -1,0 +1,47 @@
+@use "../foundation/import"as f;
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'myfont';
+  color: f.$black;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+//------------------------------------------------------------
+//WebFont 
+//------------------------------------------------------------
+@font-face {
+  font-family: 'myfont';
+  src: url('../fonts/ackaisyo.woff') format('woff'),
+    url('../fonts/ackaisyo.ttf') format('truetype');
+}
+//------------------------------------------------------------
+//@media screen
+//------------------------------------------------------------
+
+@include f.mq(pc) {
+  img {
+    height: auto;
+  }
+}
+@include f.mq(sp) {
+  img {
+    height: auto;
+  }
+}
